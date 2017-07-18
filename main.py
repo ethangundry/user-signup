@@ -60,4 +60,4 @@ def success():
 	return render_template('success.html')
 
 if __name__ =='__main__':
-	app.run
+	app.run()
