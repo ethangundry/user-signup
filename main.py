@@ -1,8 +1,10 @@
 from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 @app.route('/', methods=['GET', 'POST'])
+
 def index():
 
 	# defaults for the template
@@ -19,8 +21,8 @@ def index():
 		fields['email'] = request.form['email']
 
 		# error for username
-		if not fields['username']:
-			errors['username'] = "Complete the username field"
+		if not fields['username'] or len(fields['username']) < 3  or len(fields['username']) >20 or ' ' in fields['username']:
+			errors['username'] = "Complete the username field. Must be 3 characters or more and less than 20 characters with no spaces"
 			has_error = True
 
 		# error for password

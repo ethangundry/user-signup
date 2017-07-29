@@ -23,14 +23,14 @@
         </div>
         <div>
             <label>Password</label>
-            <input type="password" name="password" value="{{fields.password}}" />
+            <input type="password" name="password" value="" />
             {% if errors['password']  %} 
               <span class="error">{{ errors['password'] }}</span>
-             {% endif %}
+            {% endif %}
         </div>
         <div>
             <label>Confirm Password</label>
-            <input type="password" name="password_confirm" value="{{fields.password_confirm}}" />
+            <input type="password" name="password_confirm" value="" />
             {% if errors['password_confirm']  %} 
               <span class="error">{{ errors['password_confirm'] }}</span>
              {% endif %}
